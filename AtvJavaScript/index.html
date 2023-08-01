@@ -1,0 +1,49 @@
+﻿
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Calculadora</title>
+</head>
+<body>
+    <div>
+        <h1>Dados do Cliente</h1>
+    </div>
+    <div>
+        Adicionar Dados <br />
+
+        Salário: <input sal_="sal_input" id="salario" type="number" max="default" />
+        </p>
+        Aliquota IRRF: <input aliq="aliqinput" id="aliquota" type="number" max="15" maxlength="15" />
+        </p>
+        INSS: <input inss="inssinput" type="number" id="inss" max="20" maxlength="20" />
+        </p>
+        Salário Líquido: <input sal_liq="sal_liqinput" id="salario liquido" type="number" />
+        <br />
+        <button onclick="Calcular()">Calcular</button>
+        <button onclick="KarolcomK()">Limpar</button> 
+
+    </div>
+    <script>
+        function Calcular() {
+            var salario = document.getElementById('salario').value;
+            var aliquota = document.getElementById('aliquota').value;
+            var inss = document.getElementById('inss').value;
+          
+
+            var a = salario * (aliquota / 100)
+            var b = salario * (inss / 100)
+            var c = a + b
+            var resultado = salario - c
+            document.getElementById('salario liquido').value = resultado;
+        }
+        function KarolcomK() {
+            document.getElementById('salario').value = "";
+            document.getElementById('aliquota').value = "";
+            document.getElementById('inss').value = "";
+        }
+    </script>
+</body>
+
+</html>
